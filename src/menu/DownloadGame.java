@@ -1,7 +1,5 @@
 package menu;
 
-import menu.Command;
-
 public class DownloadGame implements Command {
     private Menu theMenu;
 

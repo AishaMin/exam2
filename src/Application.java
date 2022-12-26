@@ -1,5 +1,5 @@
 import game.Game;
-import game.Paragraph;
+import menu.Menu;
 import menu.*;
 
 import java.util.Scanner;
@@ -25,16 +25,33 @@ public class Application {
         }
         else if (input == 1){
             invoker.StartGame();
-
-            Paragraph paragraph1 = new Paragraph("Лисенок");
-            Game.paragraph(paragraph1.getParagraphName());
+            Game.paragraph("Лисенок");
 
         } else if (input == 2) {
             invoker.downloadGame();
+            System.out.println(Menu.downloadedParagraph);
+            Game.paragraph(Menu.downloadedParagraph);
         }
 
 
+        System.out.println("0. Выход \n" +
+                "1. Начать игру \n" +
+                "2. Загрузить игру \n" +
+                "3.Сохранить игру");
+        Scanner in2 = new Scanner(System.in);
+        int input2 = in2.nextInt();
+        if (input2 == 0) {
+            invoker.exit();
+        } else if (input2 == 1) {
+            invoker.StartGame();
+            Game.paragraph("Лисенок");
+
+        } else if (input2 == 2) {
+            invoker.downloadGame();
 
 
+        } else if (input2 == 3) {
+            invoker.saveGame();
+        }
     }
 }

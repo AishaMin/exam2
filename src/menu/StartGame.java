@@ -1,8 +1,5 @@
 package menu;
 
-import menu.Command;
-import menu.Menu;
-
 public class StartGame implements Command {
     private Menu theMenu;
 
